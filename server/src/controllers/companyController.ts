@@ -7,8 +7,8 @@ import Customer from "../models/Customer";
 import Deal from "../models/Deal";
 import ActivityLog from "../models/ActivityLog";
 import JoinRequest from "../models/JoinRequest";
-import Package from "../models/Package.js";
-import SubscriptionHistory from "../models/SubscriptionHistory.js";
+import Package from "../models/Package";
+import SubscriptionHistory from "../models/SubscriptionHistory";
 import { AuthenticatedRequest } from "../middleware/authMiddleware";
 
 const registerCompanySchema = z.object({
