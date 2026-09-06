@@ -1,0 +1,27 @@
+{
+  "name": "ai-crm-fullstack",
+  "version": "1.0.0",
+  "description": "AI CRM Platform - Full Stack Application",
+  "scripts": {
+    "dev": "concurrently --raw \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:server": "cd server && npm run dev",
+    "dev:client": "cd client && npm run dev",
+    "install:all": "npm install && cd server && npm install && cd ../client && npm install",
+    "vercel-build": "cd client && npm run build"
+  },
+  "keywords": [
+    "crm",
+    "ai",
+    "sales",
+    "fullstack"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@vercel/node": "^3.2.29",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

@@ -1,0 +1,185 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: 37 99 235;      /* #2563EB */
+    --color-secondary: 29 78 216;    /* #1D4ED8 */
+    --color-success: 22 163 74;      /* #16A34A */
+    --color-text-primary: 15 23 42;  /* #0F172A */
+    --color-text-secondary: 100 116 139; /* #647488 */
+    --color-border: 226 232 240;     /* #E2E8F0 */
+    --color-surface: 255 255 255;    /* #FFFFFF */
+    --color-bg: 248 250 252;         /* #F8FAFC */
+  }
+
+  html.dark, .dark {
+    --color-primary: 37 99 235;      /* #2563EB */
+    --color-secondary: 29 78 216;    /* #1D4ED8 */
+    --color-success: 34 197 94;      /* #22C55E */
+    --color-text-primary: 255 255 255; /* #FFFFFF */
+    --color-text-secondary: 161 161 170; /* #A1A1AA */
+    --color-border: 39 39 42;        /* #27272A */
+    --color-surface: 18 18 18;       /* #121212 */
+    --color-bg: 9 9 11;              /* #09090B */
+  }
+
+  body {
+    @apply bg-brand-bg text-brand-textPrimary font-sans antialiased transition-colors duration-200;
+  }
+}
+
+/* ───────────────────────────────────────────────────────────────────────────
+   PROJECT-WIDE SCROLLBAR HIDING (Preserves full scrolling, hides native visual bar)
+   ─────────────────────────────────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 0px !important;
+  height: 0px !important;
+  display: none !important;
+  background: transparent !important;
+}
+
+* {
+  -ms-overflow-style: none !important;  /* IE and Edge */
+  scrollbar-width: none !important;     /* Firefox */
+}
+
+/* ───────────────────────────────────────────────────────────────────────────
+   PROJECT-WIDE PURE DARK BLACK, GRAY & WHITE THEME
+   ─────────────────────────────────────────────────────────────────────────── */
+html.dark {
+  background-color: #09090b;
+}
+
+html.dark body {
+  background-color: #09090b;
+  color: #ffffff;
+}
+
+/* Surfaces & Containers in Pure Dark Black / Gray */
+html.dark .bg-white {
+  background-color: #121212 !important;
+}
+
+html.dark .bg-slate-50,
+html.dark .bg-slate-50\/50,
+html.dark .bg-slate-50\/70,
+html.dark .bg-slate-50\/80 {
+  background-color: #09090b !important;
+}
+
+html.dark .bg-slate-100,
+html.dark .bg-slate-100\/80,
+html.dark .bg-slate-100\/90,
+html.dark .bg-slate-200,
+html.dark .bg-slate-300 {
+  background-color: #18181b !important;
+}
+
+/* Typography in Dark Mode (Crisp White & Light Gray) */
+html.dark .text-slate-900,
+html.dark .text-slate-800,
+html.dark .text-slate-700,
+html.dark .text-brand-textPrimary {
+  color: #ffffff !important;
+}
+
+html.dark .text-slate-600,
+html.dark .text-slate-500,
+html.dark .text-brand-textSecondary {
+  color: #a1a1aa !important;
+}
+
+html.dark .text-slate-400 {
+  color: #71717a !important;
+}
+
+/* Neutral Gray Borders in Dark Mode */
+html.dark .border-slate-100,
+html.dark .border-slate-200,
+html.dark .border-slate-200\/80,
+html.dark .border-slate-200\/90,
+html.dark .border-brand-border {
+  border-color: #27272a !important;
+}
+
+html.dark .divide-slate-100 > :not([hidden]) ~ :not([hidden]),
+html.dark .divide-slate-200 > :not([hidden]) ~ :not([hidden]) {
+  border-color: #27272a !important;
+}
+
+/* Hover States in Dark Mode */
+html.dark .hover\:bg-slate-50:hover,
+html.dark .hover\:bg-slate-100:hover,
+html.dark .hover\:bg-slate-100\/80:hover,
+html.dark .hover\:bg-slate-100\/90:hover {
+  background-color: #1f1f23 !important;
+}
+
+html.dark .hover\:text-slate-900:hover,
+html.dark .hover\:text-slate-800:hover,
+html.dark .hover\:text-brand-textPrimary:hover {
+  color: #ffffff !important;
+}
+
+/* Form Controls & Dropdowns */
+html.dark input:not([type='checkbox']):not([type='radio']):not([type='button']):not([type='submit']),
+html.dark select,
+html.dark textarea {
+  background-color: #18181b !important;
+  color: #ffffff !important;
+  border-color: #27272a !important;
+}
+
+/* Explicit Native Option Styling */
+select option {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+}
+
+html.dark select option {
+  background-color: #18181b !important;
+  color: #ffffff !important;
+}
+
+html.dark input::placeholder,
+html.dark textarea::placeholder {
+  color: #71717a !important;
+}
+
+/* Tables in Dark Mode */
+html.dark table thead {
+  background-color: #141416 !important;
+  color: #a1a1aa !important;
+}
+
+html.dark table tbody tr:hover {
+  background-color: #1a1a1e !important;
+}
+
+/* Modals & Dropdown Shadows */
+html.dark .shadow-lg,
+html.dark .shadow-xl,
+html.dark .shadow-2xl,
+html.dark .smooth-shadow,
+html.dark .premium-shadow {
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.7), 0 8px 10px -6px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(39, 39, 42, 0.8) !important;
+}
+
+/* Enterprise SaaS Custom Utilities */
+@layer utilities {
+  .glass-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .smooth-shadow {
+    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05), 0 2px 6px -1px rgba(0, 0, 0, 0.02);
+  }
+
+  .premium-shadow {
+    box-shadow: 0 20px 40px -15px rgba(37, 99, 235, 0.12);
+  }
+}

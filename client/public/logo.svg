@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="logoPrimary" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="50%" stop-color="#2563EB" />
+      <stop offset="100%" stop-color="#4F46E5" />
+    </linearGradient>
+
+    <linearGradient id="logoSpark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F0ABFC" />
+      <stop offset="50%" stop-color="#C084FC" />
+      <stop offset="100%" stop-color="#818CF8" />
+    </linearGradient>
+  </defs>
+
+  <rect width="512" height="512" rx="128" fill="#0F172A" />
+  <rect x="16" y="16" width="480" height="480" rx="112" fill="none" stroke="url(#logoPrimary)" stroke-opacity="0.3" stroke-width="8" />
+
+  <g transform="translate(0,0)">
+    <path d="M 256 96 L 384 160 L 384 320 L 256 416 L 128 320 L 128 160 Z" 
+          fill="none" 
+          stroke="url(#logoPrimary)" 
+          stroke-width="22" 
+          stroke-linecap="round" 
+          stroke-linejoin="round" />
+
+    <path d="M 176 192 L 256 144 L 256 240 L 176 288 Z" fill="url(#logoPrimary)" opacity="0.9" />
+    <path d="M 336 192 L 256 240 L 256 336 L 336 288 Z" fill="url(#logoSpark)" opacity="0.95" />
+
+    <path d="M 256 160 Q 256 230 186 230 Q 256 230 256 300 Q 256 230 326 230 Q 256 230 256 160 Z" fill="#FFFFFF" />
+
+    <circle cx="256" cy="96" r="14" fill="#38BDF8" />
+    <circle cx="384" cy="160" r="14" fill="#C084FC" />
+    <circle cx="384" cy="320" r="14" fill="#818CF8" />
+    <circle cx="256" cy="416" r="14" fill="#34D399" />
+    <circle cx="128" cy="320" r="14" fill="#2563EB" />
+    <circle cx="128" cy="160" r="14" fill="#60A5FA" />
+  </g>
+</svg>

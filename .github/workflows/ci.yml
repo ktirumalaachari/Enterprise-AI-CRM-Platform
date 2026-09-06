@@ -1,0 +1,34 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      # Test Backend Build
+      - name: Install Server Dependencies & Build
+        run: |
+          cd server
+          npm install --legacy-peer-deps
+          npm run build
+
+      # Test Frontend Build
+      - name: Install Client Dependencies & Build
+        run: |
+          cd client
+          npm install --legacy-peer-deps
+          npm run build
+
