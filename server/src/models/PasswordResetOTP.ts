@@ -55,9 +55,6 @@ const PasswordResetOTPSchema: Schema<IPasswordResetOTP> = new Schema(
   }
 );
 
-// Compound index for efficient lookups by email
-PasswordResetOTPSchema.index({ email: 1 });
-
 // Unique index — only one active OTP allowed per email at a time
 PasswordResetOTPSchema.index(
   { email: 1 },
