@@ -4,9 +4,11 @@ import App from './App';
 import './styles/index.css';
 import { GoogleOAuthProvider } from '@react-oauth/google';
 
-const googleClientId =
-  import.meta.env.VITE_GOOGLE_CLIENT_ID ||
-  '550705576930-cfe9sgcvvrbrk0qsm12l9eufbohp7skt.apps.googleusercontent.com';
+const googleClientId = import.meta.env.VITE_GOOGLE_CLIENT_ID;
+
+if (!googleClientId) {
+  throw new Error("VITE_GOOGLE_CLIENT_ID is not configured");
+}
 
 console.log('Google Client ID loaded:', googleClientId);
 
